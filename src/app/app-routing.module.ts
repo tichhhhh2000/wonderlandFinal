@@ -96,13 +96,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/estrenos-album/estrenos-album.module').then( m => m.EstrenosAlbumPageModule)
   },
   {
+    path: 'detalle-estreno/:id',
+    loadChildren: () => import('./pages/detalle-estreno/detalle-estreno.module').then( m => m.DetalleEstrenoPageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
-  {
-    path: 'detalle-estreno',
-    loadChildren: () => import('./pages/detalle-estreno/detalle-estreno.module').then( m => m.DetalleEstrenoPageModule)
-  },
+ 
 ];
 
 @NgModule({

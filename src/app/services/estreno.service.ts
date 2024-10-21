@@ -27,6 +27,16 @@ export class EstrenoService {
     );
   }
 
+  getEstrenoById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiURL}/${id}`, this.httpOptions).pipe(
+      retry(1), // Reintenta una vez en caso de error
+      catchError(this.handleError) // Maneja los errores
+    );
+  }
+  
+
+
+
   // Manejo de errores
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Error desconocido';
