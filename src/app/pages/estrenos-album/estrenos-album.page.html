@@ -17,21 +17,21 @@
     <h1>Wonderland</h1>
   </div>
 
-  <ng-container *ngIf="estrenos.length > 0; else noData">
+  <ng-container>
     <ion-grid>
       <ion-row>
         <ion-col size="6" *ngFor="let estreno of estrenos">
           <ion-card class="estreno-card">
             <ion-card-header>
               <ion-thumbnail class="estreno-thumbnail">
-                <img [src]="estreno.imagen" alt="Portada de {{ estreno.titulo }}">
+                <img [src]="estreno.imagen" alt="Portada de {{ estreno.album }}">
               </ion-thumbnail>
             </ion-card-header>
             <ion-card-content>
               <ion-label>
-                <h2>{{ estreno.titulo }}</h2>
+                <h2>{{ estreno.album }}</h2>
                 <p>{{ estreno.artista }}</p>
-                <p>Año: {{ estreno.anio }}</p>
+                <p>Fecha Estreno ¡PRÓXIMAMENTE!</p>
               </ion-label>
             </ion-card-content>
           </ion-card>
@@ -40,7 +40,4 @@
     </ion-grid>
   </ng-container>
 
-  <ng-template #noData>
-    <p>No hay estrenos disponibles en este momento.</p>
-  </ng-template>
 </ion-content>

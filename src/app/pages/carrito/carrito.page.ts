@@ -65,6 +65,11 @@ export class CarritoPage implements OnInit {
   }
 
   aceptarCompra() {
+    if (this.listaCarrito.length === 0) {
+      this.alerta.GenerarAlerta('Error', 'El carrito está vacío. Agrega productos para continuar.');
+      return;
+    }
+  
     this.storage.getItem('usuario_logueado').then(async (idUsuario: any) => {
       if (!idUsuario) {
         this.alerta.GenerarAlerta('Error', 'No hay un usuario logueado.');
@@ -95,6 +100,7 @@ export class CarritoPage implements OnInit {
       this.alerta.GenerarAlerta('Error', 'No se pudo obtener el usuario logueado: ' + JSON.stringify(e));
     });
   }
+  
   
   
   

@@ -27,7 +27,7 @@
               <p>{{ album.nombre_artista }}</p>
               <h2>{{ album.nombre_album }}</h2>
               <p style="font-weight: bold;">{{ album.precio_album | currency:'$':'symbol':'1.0-0' }}</p>
-              <p>Stock: {{ album.stock }}</p> <!-- Muestra el stock aquí -->
+              <p>¡Solo quedan: {{ album.stock }}!</p> <!-- Muestra el stock aquí -->
             </ion-label>
           </ion-card-content>
         </ion-card>

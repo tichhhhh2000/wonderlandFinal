@@ -61,8 +61,12 @@
         <h2 class="total-carrito">{{ totalCarrito | currency:'$':'symbol':'1.0-0' }}</h2>
       </ion-col>
       <ion-col size="6" class="ion-text-end">
-        <ion-button color="secondary" (click)="aceptarCompra()">Comprar</ion-button>
-
+        <ion-button 
+          color="secondary" 
+          (click)="aceptarCompra()" 
+          [disabled]="listaCarrito.length === 0">
+            Comprar
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-toolbar>

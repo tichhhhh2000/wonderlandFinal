@@ -99,6 +99,10 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./pages/notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
+  {
+    path: 'detalle-estreno',
+    loadChildren: () => import('./pages/detalle-estreno/detalle-estreno.module').then( m => m.DetalleEstrenoPageModule)
+  },
 ];
 
 @NgModule({
