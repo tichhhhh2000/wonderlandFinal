@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EstrenoService } from 'src/app/services/estreno.service'; // Importamos el servicio
+import { EstrenoService } from 'src/app/services/estreno.service';
 
 @Component({
   selector: 'app-estrenos-album',
@@ -8,26 +8,23 @@ import { EstrenoService } from 'src/app/services/estreno.service'; // Importamos
 })
 export class EstrenosAlbumPage implements OnInit {
 
-  estrenos: any[] = [];  // Variable para almacenar los estrenos
+  estrenos: any[] = []; // Variable para almacenar los discos
 
   constructor(private estrenoService: EstrenoService) {}
 
   ngOnInit() {
-    this.cargarEstrenos();  // Llamamos al método al inicializar la página
+    this.cargarEstrenos(); // Cargar los estrenos al inicializar la página
   }
 
   // Método para cargar los estrenos desde la API
   cargarEstrenos() {
     this.estrenoService.getEstrenos().subscribe(
-      (response) => {
-        if (response.ok && response.statusCode === 200) {
-          this.estrenos = response.data;  // Guardamos los datos en la variable
-        } else {
-          console.error('Error en la respuesta de la API:', response);
-        }
+      (data: any[]) => {
+        console.log('Discos recibidos:', data); // Mostrar los discos en la consola
+        this.estrenos = data; // Asignar los discos recibidos a la variable
       },
       (error) => {
-        console.error('Error al cargar los estrenos:', error);
+        console.error('Error al cargar los discos:', error);
       }
     );
   }
