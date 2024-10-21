@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/administracion"
+        icon="arrow-back-outline" 
+        text="" 
+        color="black">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title size="large">Wonderland</ion-title>  
+  <div><h1>Eliminar Álbum</h1></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let album of albums">
+        <ion-card>
+          <ion-card-header>
+            <ion-thumbnail>
+              <img *ngIf="album.portada_album" [src]="album.portada_album">
+            </ion-thumbnail>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>
+              <p>{{ album.nombre_artista }}</p>
+              <h2>{{ album.nombre_album }}</h2>
+              <p style="font-weight: bold;">{{ album.precio_album }}</p>
+              <ion-button class="boton-eliminar" color="danger" (click)="eliminarAlbum(album.id_album)">Eliminar Álbum</ion-button>
+            </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- NO MAS COTROL Z -->

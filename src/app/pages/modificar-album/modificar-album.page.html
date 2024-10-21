@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/administracion"
+        icon="arrow-back-outline" 
+        text="" 
+        color="black">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title size="large">Wonderland</ion-title>  
+  <div><h1>Modificar Álbum</h1></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" *ngFor="let album of albums">
+        <ion-card>
+          
+          <!-- Imagen del álbum más grande -->
+          <ion-card-header class="header-album">
+            <ion-img class="imagen-album" *ngIf="album.portada_album" [src]="album.portada_album"></ion-img>
+            <ion-img class="imagen-album" *ngIf="portadaAlbum" [src]="portadaAlbum"></ion-img>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-label>
+
+              <!-- Pre-llenar los campos de entrada con los datos del álbum -->
+              <ion-input [(ngModel)]="album.nombre_artista" placeholder="Artista"></ion-input>
+              <ion-input [(ngModel)]="album.nombre_album" placeholder="Nombre del álbum"></ion-input>
+              <ion-item>
+                <ion-label position="floating">Stock</ion-label>
+                <ion-input type="number" [(ngModel)]="album.stock"></ion-input>
+              </ion-item>
+              <ion-input [(ngModel)]="album.precio_album" type="number" placeholder="Precio"></ion-input>
+              <ion-input [(ngModel)]="album.detalle_album" placeholder="Detalles"></ion-input>
+              <ion-button color="light" (click)="ingresarImagen(album)">Ingresar Foto <ion-icon slot="end" name="image-outline"></ion-icon></ion-button>
+              <ion-button color="primary" (click)="validacion(album)">Modificar Álbum</ion-button>
+              
+            </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- NO MAS COTROL Z -->
+ <!--VOY A INTENTAR AGREGAR CRUD PARA STOCK-->
+ <!--ULTIMA VEZ INTENTANDO HACER EL STOCK-->

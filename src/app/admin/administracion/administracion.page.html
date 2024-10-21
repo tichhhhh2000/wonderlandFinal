@@ -1,0 +1,19 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-title size="large">Wonderland</ion-title>  
+    <div><h1>Administración</h1></div>
+    <div class="button-container">
+      <ion-button [routerLink]="['/ver-album']">Ver Álbum</ion-button>
+      <ion-button [routerLink]="['/agregar-album']">Añadir Álbum</ion-button>
+      <ion-button [routerLink]="['/modificar-album']">Modificar Álbum</ion-button>
+      <ion-button [routerLink]="['/eliminar-album']">Eliminar Álbum</ion-button>
+      <ion-button color="light" [routerLink]="['/login']" (click)="toastAlbum()">Cerrar Sesión</ion-button>
+    </div>
+  
+  </ion-content>
+

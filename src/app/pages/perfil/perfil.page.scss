@@ -1,0 +1,106 @@
+ion-toolbar {
+  background: linear-gradient(134deg, #07d8e2 54.07%, #35e99d 99.24%);
+}
+
+  ion-content {
+    --background: var(--ion-background-color, linear-gradient(134deg, #07d8e2 54.07%, #35e99d 99.24%));
+    
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap');
+
+h1 {
+  font-size: 75px;
+  font-family: 'Great vibes', cursive; 
+  color: white;
+  padding-top: 50px; /* Ajusta el padding superior */
+  margin-top: 50px; /* Ajusta este valor según necesites */
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Playwrite+HR:wght@100..400&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+h2 {
+  font-size: 30px;
+  font-family: 'Roboto Condensed', cursive; /* Aplica la fuente 'Pacifico' */
+  color: black;
+  padding-top: 0px; /* Ajusta el padding superior */
+  margin-top: 0px; /* Ajusta este valor según necesites */
+  text-align: center;
+}
+
+
+.profile-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.profile-photo-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.profile-info p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.edit-button {
+  margin-top: 20px;
+  background-color: #07d8e2;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .profile-card {
+    width: 70%;
+  }
+}

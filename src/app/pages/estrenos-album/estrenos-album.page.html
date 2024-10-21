@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/home" 
+        icon="arrow-back-outline" 
+        text="" 
+        color="black">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Estrenos de Álbumes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="content-container">
+  <div class="titulo-container">
+    <h1>Wonderland</h1>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let estreno of estrenos">
+        <ion-card class="estreno-card">
+          <ion-card-header>
+            <ion-thumbnail class="estreno-thumbnail">
+              <img [src]="estreno.imagen" alt="Portada de {{ estreno.album }}">
+            </ion-thumbnail>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label>
+              <h2>{{ estreno.album }}</h2>
+              <p>{{ estreno.artista }}</p>
+              <p>Lanzamiento: {{ estreno.fecha_estreno }}</p>
+            </ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

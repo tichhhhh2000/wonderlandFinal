@@ -1,0 +1,25 @@
+<ion-content [fullscreen]="true">
+<ion-header [translucent]="true" color="mycolor">
+</ion-header>
+
+  <div> <h1>Wonderland</h1> </div>
+  <div><h2>Inicio Sesión</h2></div>
+
+  <form class="container">
+    <ion-item>
+      <ion-input label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario" [(ngModel)]="username" name="usuario"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Contraseña" type="password" labelPlacement="floating" placeholder="Ingrese contraseña" [(ngModel)]="password" name="contra"></ion-input>
+    </ion-item>
+    <ion-button (click)="iniciarSesion()" color="secondary">Ingresar</ion-button>
+    <ion-button [routerLink]="['/registrarse']" color="secondary">Registrarse</ion-button>
+    
+  </form>
+  <div><h3>¿Olvidaste tu contraseña?</h3></div>
+  <ion-button color="secondary" [routerLink]="['/recuperar']" fill="clear">Ingresa aquí</ion-button>
+
+</ion-content>
+
+<!-- NO MAS COTROL Z -->
